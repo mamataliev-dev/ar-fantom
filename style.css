@@ -73,18 +73,51 @@ model-viewer {
     height: 300px;
 }
 
-.open-qr-modal {
-    width: 30px;
-    height: 30px;
+.model-btn {
     position: absolute;
     top: 0;
     right: 0;
     z-index: 1;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.open-qr-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vis-i-ar {
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.ar-gif {
+    width: 80px;
+    height: 80px;
+
+    width: auto;
+    height: auto;
 }
 
 @media(max-width: 1000px) {
     .open-qr-modal {
         display: none;
+    }
+}
+
+@media(max-width: 768px) {
+    .ar-gif {
+        width: 70px;
+        height: 70px;
     }
 }
 
@@ -116,20 +149,6 @@ model-viewer {
 
 .model-view.open {
     display: block;
-}
-
-.ar-gif {
-    position: absolute;
-    top: 20px;
-    right: 0;
-    z-index: 1;
-}
-
-@media(max-width: 768px) {
-    .ar-gif {
-        width: 70px;
-        height: 70px;
-    }
 }
 
 .none {
