@@ -9,6 +9,8 @@ openModalBtn.forEach((btn) => {
     const target = e.target;
     const attr = target.getAttribute("data-model");
 
+    console.log(attr);
+
     models.forEach((model) => {
       const modelAttr = model.getAttribute("data-model");
 
@@ -34,6 +36,34 @@ closeModel.addEventListener("click", () => {
   elements.classList.remove("hide");
   closeModel.classList.remove("active");
   document.body.classList.remove("dark");
+});
+
+// Open QR Modal / Change QR-Code img
+const qrImg = document.querySelector(".qr-img");
+const qrModal = document.querySelector(".qr-blockout");
+const closeQrModal = document.querySelector(".close-qr-modal");
+const openQrModal = document.querySelectorAll(".open-qr-modal");
+
+openQrModal.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    qrModal.classList.add("open");
+
+    const target = e.target;
+    const attr = target.getAttribute("data-model");
+
+    qrImg.src = `./img/${attr}.png`;
+  });
+});
+
+// Close QR Modal
+closeQrModal.addEventListener("click", () => {
+  qrModal.classList.remove("open");
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("qr-blockout")) {
+    qrModal.classList.remove("open");
+  }
 });
 
 // Handles loading the events for <model-viewer>'s slotted progress bar

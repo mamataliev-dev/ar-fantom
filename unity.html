@@ -12,22 +12,40 @@
 <body>
     <div class="container container-fluid h-100">
         <div class="elements row d-flex align-items-center justify-content-center">
-            <div class="col-6 col-md-4 p-2">
+            <div class="col-6 col-md-4 p-2 position-relative">
                 <button class="model-btn">
-                    <img data-model="nexus" src="./img/Nexus.webp" class="img-fluid" alt="Model 1">
+                    <img class="ar-gif" data-model="nexus"
+                        src="https://www.ajprodukter.no/assets/AR.cad2785962eb821ae995c1453efa16f2.gif" alt="">
                 </button>
+
+                <!-- model-view -->
+                <model-viewer class="model" data-model="nexus" src="./GLB/Nexus.glb" ar
+                    ar-modes="scene-viewer webxr quick-look" camera-controls poster="./img/Nexus.webp"
+                    shadow-intensity="1" camera-orbit="-72.2deg 72.39deg 0.2852m" field-of-view="30deg">
+                </model-viewer>
             </div>
 
-            <div class="col-6 col-md-4 p-2">
+            <div class="col-6 col-md-4 p-2 position-relative">
                 <button class="model-btn">
-                    <img data-model="womanizer" src="./img/Womanizer.webp" class="img-fluid" alt="Model 2">
+                    <img class="ar-gif" data-model="womanizer"
+                        src="https://www.ajprodukter.no/assets/AR.cad2785962eb821ae995c1453efa16f2.gif" alt="">
                 </button>
+
+                <model-viewer class="model" data-model="womanizer" src="./GLB/Womanizer.glb" ar
+                    ar-modes="scene-viewer webxr quick-look" camera-controls poster="./img/Womanizer.webp"
+                    shadow-intensity="1">
+                </model-viewer>
             </div>
 
-            <div class="col-6 col-md-4 p-2">
+            <div class="col-6 col-md-4 p-2 position-relative">
                 <button class="model-btn">
-                    <img data-model="svakom" src="./img/Svakom.webp" class="img-fluid" alt="Model 3">
+                    <img class="ar-gif" data-model="svakom"
+                        src="https://www.ajprodukter.no/assets/AR.cad2785962eb821ae995c1453efa16f2.gif" alt="">
                 </button>
+
+                <model-viewer class="model" data-model="svakom" src="./GLB/Svakom.glb" ar
+                    ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+                </model-viewer>
             </div>
 
             <div class="col-6 col-md-4 p-2">
@@ -59,9 +77,14 @@
         </button>
 
         <!-- Model Viewer Nexus -->
-        <model-viewer class="model-view" data-model="nexus" src="./GLB/Nexus.glb" ar
+        <model-viewer class="model-view position-relative" data-model="nexus" src="./GLB/Nexus.glb" ar
             ar-modes="scene-viewer webxr quick-look" camera-controls poster="./img/Nexus.webp" shadow-intensity="1"
             camera-orbit="-72.2deg 72.39deg 0.2852m" field-of-view="30deg">
+            <button class="open-qr-modal">
+                <img class="ar-gif" data-model="nexus-qr"
+                    src="https://www.ajprodukter.no/assets/AR.cad2785962eb821ae995c1453efa16f2.gif" alt="">
+            </button>
+
             <div class="progress-bar hide" slot="progress-bar">
                 <div class="update-bar"></div>
             </div>
@@ -70,8 +93,13 @@
         </model-viewer>
 
         <!-- Model Viewer Womanizer -->
-        <model-viewer class="model-view" data-model="womanizer" src="./GLB/Womanizer.glb" ar
+        <model-viewer class="model-view position-relative" data-model="womanizer" src="./GLB/Womanizer.glb" ar
             ar-modes="scene-viewer webxr quick-look" camera-controls poster="./img/Womanizer.webp" shadow-intensity="1">
+            <button class="open-qr-modal">
+                <img class="ar-gif" data-model="womanizer-qr"
+                    src="https://www.ajprodukter.no/assets/AR.cad2785962eb821ae995c1453efa16f2.gif" alt="">
+            </button>
+
             <div class="progress-bar hide" slot="progress-bar">
                 <div class="update-bar"></div>
             </div>
@@ -80,14 +108,42 @@
         </model-viewer>
 
         <!-- Model Viewer Svakom -->
-        <model-viewer class="model-view" data-model="svakom" src="./GLB/Svakom.glb" ar
+        <model-viewer class="model-view position-relative" data-model="svakom" src="./GLB/Svakom.glb" ar
             ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+            <button class="open-qr-modal">
+                <img class="ar-gif" data-model="svakom-qr"
+                    src="https://www.ajprodukter.no/assets/AR.cad2785962eb821ae995c1453efa16f2.gif" alt="">
+            </button>
+
             <div class="progress-bar hide" slot="progress-bar">
                 <div class="update-bar"></div>
             </div>
             <button slot="ar-button" id="ar-button">View in your space</button>
             <div id="ar-prompt"><img src="./img/ar_hand_prompt.png"></div>
         </model-viewer>
+
+        <!-- QR Modal -->
+        <div class="qr-blockout">
+            <div class="qr-modal">
+                <button class="close-qr-modal">
+                    <img class="close-qr-modal" src="./img/close 1.svg" alt="">
+                </button>
+
+                <h1 class="h1 text-black mb-3">QR Code for AR</h2>
+                    <p class="text-inf text-black text-center mb-3">
+                        Scan this QR code with your mobile phone
+                        to view this product on your device and
+                        see it placed in your surroundings.
+                    </p>
+
+                    <img class="qr-img mb-3" src="./img/nexus-qr.png" alt="">
+
+                    <p class="text-inf text-sup text-black text-center">
+                        Augmented Reality is supported on the following devices:
+                        Chrome Android 81+
+                    </p>
+            </div>
+        </div>
     </div>
 
     <!-- Ar Test -->
