@@ -38,12 +38,12 @@ closeModel.addEventListener("click", () => {
   document.body.classList.remove("dark");
 });
 
-// Open QR Modal / Change QR-Code img
 const qrImg = document.querySelector(".qr-img");
 const qrModal = document.querySelector(".qr-blockout");
 const closeQrModal = document.querySelector(".close-qr-modal");
 const openQrModal = document.querySelectorAll(".open-qr-modal");
 
+// Open QR Modal / Change QR-Code img
 openQrModal.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     qrModal.classList.add("open");
